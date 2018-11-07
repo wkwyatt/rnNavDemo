@@ -2,6 +2,8 @@ import Main from "../components/Main";
 import Login from "../components/Login";
 
 export default {
+    configWorks: true,
+
     env: "production",
     version: "0.0.1",
 
@@ -27,9 +29,19 @@ export default {
 
     Navigation: {
         routes: {
-            Main: Main,
-            Login: Login
+            App: [{
+                    component: Main,
+                    route: 'Main',
+                    hideHeader: true,
+                    // styles: styles
+                },
+                {
+                    component: Login,
+                    route: 'Login',
+                    hideHeader: true,
+                    // styles: styles
+                }]
         },
-        initialRouteName: 'Main',
+        initialRouteName: 'Salesforce@Login',
     }
 };
